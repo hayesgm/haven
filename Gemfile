@@ -13,6 +13,7 @@ gem 'puma'
 # Use SASS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 gem 'bootstrap-sass' # Add Bootstrap
+gem 'autoprefixer-rails' # Auto-prefix assets
 
 # Add HAML Template Engine and Generator
 gem 'haml'
