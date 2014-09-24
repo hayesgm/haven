@@ -6,14 +6,24 @@
     = csrf_meta_tags
   %body
 
-    .notice= notice
-    .alerts= alert
+    .container
+      -# Alerts
+      .notice= notice
+      .alerts= alert
 
-    .nav-bar
-      - if tenant_signed_in?
-        %a Your Account
-      - else
-        %a Sign-up
-        %a Login
+      -# Nav bar
+      %nav.navbar
+        .container-fluid
+          .collapse.navbar-collapse
+            %ul.nav.navbar-nav
+              - if tenant_signed_in?
+                .li
+                  %a Your Account
+              - else
+                .li
+                  %a{href: new_tenant_registration_path} Sign-up
+                .li
+                  %a{href: new_tenant_session_path} Login
 
-    = yield
+      -# Main page content
+      = yield
