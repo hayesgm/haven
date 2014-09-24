@@ -1,0 +1,4 @@
+
+# To generate a payment_account model
+
+rails g model payment_account  tenant_id:integer account_type:string routing_number:string account_number:string active:boolean
