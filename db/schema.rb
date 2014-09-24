@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140924073842) do
+ActiveRecord::Schema.define(version: 20140924074946) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "leases", force: true do |t|
+    t.integer  "tenant_id"
+    t.integer  "unit_id"
+    t.decimal  "payment_amount"
+    t.boolean  "acitve"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "leases", ["tenant_id"], name: "index_leases_on_tenant_id", using: :btree
+  add_index "leases", ["unit_id"], name: "index_leases_on_unit_id", using: :btree
 
   create_table "tenants", force: true do |t|
     t.string   "first_name"
