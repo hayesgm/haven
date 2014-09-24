@@ -9,4 +9,11 @@
     .notice= notice
     .alerts= alert
 
+    .nav-bar
+      - if tenant_signed_in?
+        %a Your Account
+      - else
+        %a Sign-up
+        %a Login
+
     = yield
