@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140924064055) do
+ActiveRecord::Schema.define(version: 20140924073842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,5 +43,20 @@ ActiveRecord::Schema.define(version: 20140924064055) do
   add_index "tenants", ["email"], name: "index_tenants_on_email", unique: true, using: :btree
   add_index "tenants", ["reset_password_token"], name: "index_tenants_on_reset_password_token", unique: true, using: :btree
   add_index "tenants", ["unlock_token"], name: "index_tenants_on_unlock_token", unique: true, using: :btree
+
+  create_table "units", force: true do |t|
+    t.integer  "lessor_id"
+    t.string   "address"
+    t.string   "unit_number"
+    t.string   "city"
+    t.string   "state"
+    t.string   "postal_code"
+    t.decimal  "total_rent"
+    t.integer  "payment_day"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "units", ["lessor_id"], name: "index_units_on_lessor_id", using: :btree
 
 end

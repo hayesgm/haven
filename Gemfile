@@ -46,7 +46,7 @@ gem 'devise'
 gem 'dotenv-rails'
 
 # Test gems
-group :test do
+group :test, :development do
   gem 'guard'
   gem 'guard-rspec', require: false
   

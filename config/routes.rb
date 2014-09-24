@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :units
+
   devise_for :tenants
   
   root to: "home#home"

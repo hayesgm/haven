@@ -1,0 +1,33 @@
+%h1 Listing units
+
+%table
+  %tr
+    %th Lessor
+    %th Address
+    %th Unit number
+    %th City
+    %th State
+    %th Postal code
+    %th Total rent
+    %th Payment day
+    %th
+    %th
+    %th
+
+  - @units.each do |unit|
+    %tr
+      %td= unit.lessor_id
+      %td= unit.address
+      %td= unit.unit_number
+      %td= unit.city
+      %td= unit.state
+      %td= unit.postal_code
+      %td= unit.total_rent
+      %td= unit.payment_day
+      %td= link_to 'Show', unit
+      %td= link_to 'Edit', edit_unit_path(unit)
+      %td= link_to 'Destroy', unit, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Unit', new_unit_path

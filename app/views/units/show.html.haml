@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Lessor:
+  = @unit.lessor_id
+%p
+  %b Address:
+  = @unit.address
+%p
+  %b Unit number:
+  = @unit.unit_number
+%p
+  %b City:
+  = @unit.city
+%p
+  %b State:
+  = @unit.state
+%p
+  %b Postal code:
+  = @unit.postal_code
+%p
+  %b Total rent:
+  = @unit.total_rent
+%p
+  %b Payment day:
+  = @unit.payment_day
+
+= link_to 'Edit', edit_unit_path(@unit)
+\|
+= link_to 'Back', units_path
