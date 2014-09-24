@@ -5,5 +5,7 @@ class Tenant < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :lockable
 
+  # Associations
+  has_many :leases
   
 end

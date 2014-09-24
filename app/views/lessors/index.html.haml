@@ -1,0 +1,29 @@
+%h1 Listing lessors
+
+%table
+  %tr
+    %th Name
+    %th Street address
+    %th Secondary address
+    %th City
+    %th Region
+    %th Postal code
+    %th
+    %th
+    %th
+
+  - @lessors.each do |lessor|
+    %tr
+      %td= lessor.name
+      %td= lessor.street_address
+      %td= lessor.secondary_address
+      %td= lessor.city
+      %td= lessor.region
+      %td= lessor.postal_code
+      %td= link_to 'Show', lessor
+      %td= link_to 'Edit', edit_lessor_path(lessor)
+      %td= link_to 'Destroy', lessor, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Lessor', new_lessor_path

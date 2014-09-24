@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :lessors
+
   resources :units
 
   devise_for :tenants

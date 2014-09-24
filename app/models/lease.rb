@@ -7,6 +7,8 @@
 # active:: Is this lease active?
 class Lease < ActiveRecord::Base
 
-  
+  # Assocations
+  belongs_to :tenant
+  belongs_to :unit
 
 end

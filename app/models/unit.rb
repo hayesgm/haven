@@ -11,6 +11,11 @@
 # payment_day:: Day of month to expect payment
 class Unit < ActiveRecord::Base
 
+  # Associations
+  belongs_to :lessor
+  has_many :leases
+  has_many :tenants, through: :leases # TODO: Scope active
+
   
   
 end

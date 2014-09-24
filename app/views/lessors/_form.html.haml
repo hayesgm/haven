@@ -1,0 +1,28 @@
+= form_for @lessor do |f|
+  - if @lessor.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@lessor.errors.count, "error")} prohibited this lessor from being saved:"
+      %ul
+        - @lessor.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :street_address
+    = f.text_field :street_address
+  .field
+    = f.label :secondary_address
+    = f.text_field :secondary_address
+  .field
+    = f.label :city
+    = f.text_field :city
+  .field
+    = f.label :region
+    = f.text_field :region
+  .field
+    = f.label :postal_code
+    = f.text_field :postal_code
+  .actions
+    = f.submit 'Save'
