@@ -47,6 +47,9 @@ gem 'dotenv-rails'
 
 # Test gems
 group :test do
+  gem 'guard'
+  gem 'guard-rspec', require: false
+  
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
